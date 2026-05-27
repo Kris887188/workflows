@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server'; import { prisma } from '@/lib/db/prisma';
+export async function GET(req: Request){const q=new URL(req.url).searchParams.get('q')||''; const items=await prisma.lifeEntry.findMany({where:{OR:[{title:{contains:q}},{rawText:{contains:q}},{cleanedText:{contains:q}},{literaryText:{contains:q}},{tags:{contains:q}},{people:{contains:q}},{places:{contains:q}}]},take:50,orderBy:{createdAt:'desc'}}); return NextResponse.json({items});}
