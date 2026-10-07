@@ -1,0 +1,2 @@
+import { prisma } from '@/lib/db/prisma';
+export async function GET(){const entries=await prisma.lifeEntry.findMany({where:{status:{in:['SELECTED','EDITED','FINAL']}}}); const body=entries.map(e=>`# ${e.title}\n\n${e.literaryText||e.cleanedText||e.rawText}`).join('\n\n---\n\n'); return new Response(body,{headers:{'content-type':'text/markdown; charset=utf-8','content-disposition':'attachment; filename="my-life-book.md"'}})}

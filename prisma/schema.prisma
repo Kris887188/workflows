@@ -1,0 +1,50 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "sqlite" url = env("DATABASE_URL") }
+
+enum EntryStatus { RAW PROCESSED SELECTED EDITED FINAL }
+enum PrivacyLevel { PRIVATE SENSITIVE READY_FOR_BOOK }
+
+model LifeEntry {
+  id String @id @default(cuid())
+  title String
+  sourceType String
+  originalDate DateTime?
+  approximateDateText String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  rawText String
+  cleanedText String?
+  summary String?
+  literaryText String?
+  emotionalTone String?
+  people String?
+  places String?
+  tags String?
+  chapterCandidate String?
+  status EntryStatus @default(RAW)
+  privacyLevel PrivacyLevel @default(PRIVATE)
+  notes String?
+  sourceFiles SourceFile[]
+  selections BookSelection[]
+}
+
+model SourceFile {
+  id String @id @default(cuid())
+  filename String
+  mimeType String
+  size Int
+  storagePath String
+  createdAt DateTime @default(now())
+  entryId String
+  entry LifeEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+}
+
+model Chapter { id String @id @default(cuid()) title String description String? order Int @default(0) selections BookSelection[] }
+model BookSelection {
+  id String @id @default(cuid())
+  entryId String
+  chapterId String
+  order Int @default(0)
+  entry LifeEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+}

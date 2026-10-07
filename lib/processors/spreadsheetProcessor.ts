@@ -1,0 +1,2 @@
+import * as XLSX from 'xlsx';
+export async function processSpreadsheet(buffer: Buffer) { const wb = XLSX.read(buffer); const blocks: string[] = []; wb.SheetNames.forEach((n)=>{ const rows = XLSX.utils.sheet_to_json<Record<string,string>>(wb.Sheets[n], { defval: '' }); blocks.push(`Лист: ${n}`); rows.forEach((r,i)=>blocks.push(`Строка ${i+1}: ` + Object.entries(r).map(([k,v])=>`${k}=${v}`).join(', '))); }); const text = blocks.join('\n'); return { rawText: text, cleanedText: text }; }
