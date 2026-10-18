@@ -1,6 +1,6 @@
 # Privacy Policy for Last Light
 
-**Effective date:** October 7, 2026
+**Effective date:** October 18, 2026
 
 Last Light Studio ("we", "us", or "our") provides the mobile game **Last Light** for Android.
 
@@ -13,6 +13,22 @@ This Privacy Policy explains how information may be processed when you use Last 
 Last Light does not require a separate Last Light Studio account and we do not operate our own user-profile database.
 
 The game stores gameplay information such as save data, progression, settings, unlocked content, resources, and other game-state information. This information may be stored locally on your device.
+
+### Optional reminders / Напоминания / Herinneringen
+
+**English:** If you turn reminders on, the game schedules notifications on your device itself (Android may ask for the notification permission). Nothing is sent anywhere.
+
+**Русский:** Если вы включите напоминания, игра сама запланирует уведомления на устройстве (Android может спросить разрешение на уведомления). Никуда ничего не отправляется.
+
+**Nederlands:** Zet je herinneringen aan, dan plant het spel meldingen op je apparaat zelf (Android kan om toestemming vragen). Er wordt niets verstuurd.
+
+### Writing to us / Письмо нам / Ons schrijven
+
+**English:** The "Write to us" button opens your own e-mail app with the game version and your phone model filled in, so we can answer about your device. You see the letter before you send it.
+
+**Русский:** Кнопка «Написать» открывает вашу почтовую программу с уже вписанными версией игры и моделью телефона — так проще ответить про ваше устройство. Письмо вы видите до отправки.
+
+**Nederlands:** De knop "Schrijf ons" opent je eigen e-mailapp met de spelversie en je telefoonmodel ingevuld. Je ziet de brief voordat je hem verstuurt.
 
 ## 2. Google Play and Google Play Games Services
 
